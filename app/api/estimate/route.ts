@@ -1,7 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import formidable from "formidable";
-import fs from "fs";
-import path from "path";
 import { SERVICE_RATES_PER_SQFT, MIN_JOB_FEE, COMPLEXITY_MULTIPLIER } from "@/lib/pricing";
 
 export const runtime = "nodejs";
@@ -42,17 +39,17 @@ If the scene is not a property exterior, use best judgment from visible context.
 From ALL provided images, estimate total *cleanable* area in square feet visible (do not overestimate) and a complexity 1-5.
 Keep JSON short. Do not include anything else.`;
 
-    // Call OpenAI Responses API (gpt-4o-mini) with images
-    const messages:any[] = [
+    // Call OpenAI API with images
+    const messages: any[] = [
       { role: "system", content: systemPrompt },
       { role: "user", content: [
         { type: "text", text: userPrompt },
-        ...dataUrls.map((u)=>({ type: "image_url", image_url: { url: u } }))
+        ...dataUrls.map((u) => ({ type: "image_url", image_url: { url: u } }))
       ] }
     ];
 
     const body = {
-      model: "gpt-4o-mini",
+      model: "gpt-4o-mini", 
       messages,
       temperature: 0.2,
       response_format: { type: "json_object" }
@@ -75,7 +72,11 @@ Keep JSON short. Do not include anything else.`;
     const out = await r.json();
     const content = out.choices?.[0]?.message?.content || "{}";
     let parsed: any = {};
-    try { parsed = JSON.parse(content); } catch { parsed = {}; }
+    try { 
+      parsed = JSON.parse(content); 
+    } catch { 
+      parsed = {}; 
+    }
 
     const area_sqft = Math.max(0, Number(parsed.area_sqft || 0));
     const complexity = Math.min(5, Math.max(1, Number(parsed.complexity || 2.5)));
@@ -87,10 +88,17 @@ Keep JSON short. Do not include anything else.`;
     const total = Math.round(subtotal * 100) / 100;
 
     return NextResponse.json({
-      service, area_sqft, complexity, rate, complexity_factor,
-      total, notes, images_analyzed: dataUrls.length
+      service, 
+      area_sqft, 
+      complexity, 
+      rate, 
+      complexity_factor,
+      total, 
+      notes, 
+      images_analyzed: dataUrls.length
     });
-  } catch (e:any) {
+  } catch (e: any) {
+    console.error("API Error:", e);
     return NextResponse.json({ error: e.message || "Unexpected error" }, { status: 500 });
   }
 }

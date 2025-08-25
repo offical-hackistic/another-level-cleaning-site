@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import FAQ from "@/components/FAQ";
 import TransparentPricing from "@/components/TransparentPricing";
+import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import ServiceArea from "@/components/ServiceArea";
 import Footer from "@/components/Footer";
@@ -11,7 +11,6 @@ export default function Home() {
     <main>
       <Hero />
       <Services />
-      <FAQ />
       <TransparentPricing />
       
       {/* Clean you can feel section */}
@@ -37,6 +36,7 @@ export default function Home() {
         </div>
       </section>
       
+      <FAQ />
       <Testimonials />
       <ServiceArea />
       <Footer />

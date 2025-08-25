@@ -4,4 +4,5 @@ const nextConfig = {
     serverActions: { allowedOrigins: ['*'] }
   }
 };
-export default nextConfig;
+
+module.exports = nextConfig;

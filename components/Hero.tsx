@@ -49,7 +49,7 @@ export default function Hero() {
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.9 }}
+        transition={{ delay: 0.3, duration: 2.5 }}
         className="text-center text-lg md:text-xl text-hackerGreen mt-4"
       >
         Jonesboro, Arkansas • Serving all of Northeast Arkansas

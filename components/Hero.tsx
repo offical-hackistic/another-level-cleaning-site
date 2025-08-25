@@ -1,12 +1,12 @@
 "use client";
 import Particles from "react-tsparticles";
-import { loadBasic } from "tsparticles-engine";
+import { loadSlim } from "tsparticles-slim";
 import { useCallback } from "react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
-  const particlesInit = useCallback(async (engine:any) => {
-    await loadBasic(engine);
+  const particlesInit = useCallback(async (engine: any) => {
+    await loadSlim(engine);
   }, []);
 
   return (

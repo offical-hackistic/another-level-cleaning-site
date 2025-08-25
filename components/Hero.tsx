@@ -40,13 +40,13 @@ export default function Hero() {
       />
       
       {/* Content with higher z-index to ensure visibility */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-4xl mx-auto px-4">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 2.5, ease: "easeOut" }}
-          style={{ opacity: 1 }} // Fallback to ensure visibility
-          className="text-5xl md:text-6xl font-extrabold text-hackerBlue drop-shadow-glow mb-4"
+          style={{ opacity: 1 }}
+          className="text-5xl md:text-6xl font-extrabold text-hackerBlue drop-shadow-glow mb-6"
         >
           Another Level Cleaning Services
         </motion.h1>
@@ -55,17 +55,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 2.5, ease: "easeOut" }}
-          style={{ opacity: 1 }} // Fallback to ensure visibility
-          className="text-lg md:text-xl text-hackerGreen mb-8"
+          style={{ opacity: 1 }}
+          className="text-lg md:text-xl text-hackerGreen mb-8 leading-relaxed"
         >
-          Jonesboro, Arkansas • Serving all of Northeast Arkansas
+          Professional Exterior Cleaning Services in Northeast Arkansas. Get instant AI-powered estimates by uploading photos of your property.
         </motion.p>
         
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 2.0, ease: "easeOut" }}
-          style={{ opacity: 1 }} // Fallback to ensure visibility
+          style={{ opacity: 1 }}
           className="flex gap-4 flex-wrap justify-center"
         >
           <motion.a 
@@ -74,7 +74,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.2, duration: 1.5, ease: "easeOut" }}
-            style={{ opacity: 1, transform: "scale(1)" }} // Fallback values
+            style={{ opacity: 1, transform: "scale(1)" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -87,7 +87,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.5, duration: 1.5, ease: "easeOut" }}
-            style={{ opacity: 1, transform: "scale(1)" }} // Fallback values
+            style={{ opacity: 1, transform: "scale(1)" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -95,22 +95,6 @@ export default function Hero() {
           </motion.a>
         </motion.div>
       </div>
-      
-      {/* Fallback content that's always visible (hidden by default but shows if motion fails) */}
-      <noscript>
-        <div className="relative z-10 flex flex-col items-center justify-center text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-hackerBlue drop-shadow-glow mb-4">
-            Another Level Cleaning Services
-          </h1>
-          <p className="text-lg md:text-xl text-hackerGreen mb-8">
-            Jonesboro, Arkansas • Serving all of Northeast Arkansas
-          </p>
-          <div className="flex gap-4 flex-wrap justify-center">
-            <a href="#services" className="btn btn-primary">Our Services</a>
-            <a href="/estimator" className="btn btn-outline">AI Estimator</a>
-          </div>
-        </div>
-      </noscript>
     </section>
   );
 }

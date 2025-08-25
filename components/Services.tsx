@@ -9,7 +9,7 @@ export default function Services() {
   return (
     <section id="services" className="section">
       <div className="container">
-        <h2 className="text-3xl md:text-4xl font-bold text-hackerBlue mb-6 text-center">Exterior Cleaning Services</h2>
+        <h2 className="text-5xl md:text-6xl font-extrabold text-hackerBlue drop-shadow-glow mb-12 text-center tracking-tight">Our Services</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s,i)=> (
             <div key={i} className="card">

@@ -20,7 +20,9 @@ export default function Testimonials() {
   return (
     <section className="section">
       <div className="container">
-        <h2 className="text-3xl md:text-4xl font-bold text-hackerBlue mb-6 text-center">What Our Customers Say</h2>
+        <h2 className="text-5xl md:text-6xl font-extrabold text-hackerBlue drop-shadow-glow mb-12 text-center tracking-tight">
+          Don't take our word for it here what our customers have to say
+        </h2>
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, i) => (
             <div key={i} className="card">

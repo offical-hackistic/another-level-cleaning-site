@@ -41,7 +41,7 @@ export default function Hero() {
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }}
+        transition={{ duration: 2.5 }}
         className="text-center text-5xl md:text-6xl font-extrabold text-hackerBlue drop-shadow-glow"
       >
         Another Level Cleaning Services

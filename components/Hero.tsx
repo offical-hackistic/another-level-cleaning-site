@@ -36,53 +36,81 @@ export default function Hero() {
             modes: { repulse: { distance: 80, duration: 0.3 } }
           }
         }}
-        className="absolute inset-0"
+        className="absolute inset-0 z-0"
       />
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2.5 }}
-        className="text-center text-5xl md:text-6xl font-extrabold text-hackerBlue drop-shadow-glow"
-      >
-        Another Level Cleaning Services
-      </motion.h1>
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 2.5 }}
-        className="text-center text-lg md:text-xl text-hackerGreen mt-4"
-      >
-        Jonesboro, Arkansas • Serving all of Northeast Arkansas
-      </motion.p>
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 2.0 }}
-        className="mt-8 flex gap-4"
-      >
-        <motion.a 
-          href="#services" 
-          className="btn btn-primary"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.2, duration: 1.5 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+      
+      {/* Content with higher z-index to ensure visibility */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2.5, ease: "easeOut" }}
+          style={{ opacity: 1 }} // Fallback to ensure visibility
+          className="text-5xl md:text-6xl font-extrabold text-hackerBlue drop-shadow-glow mb-4"
         >
-          Our Services
-        </motion.a>
-        <motion.a 
-          href="/estimator" 
-          className="btn btn-outline"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.5, duration: 1.5 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          Another Level Cleaning Services
+        </motion.h1>
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 2.5, ease: "easeOut" }}
+          style={{ opacity: 1 }} // Fallback to ensure visibility
+          className="text-lg md:text-xl text-hackerGreen mb-8"
         >
-          AI Estimator
-        </motion.a>
-      </motion.div>
+          Jonesboro, Arkansas • Serving all of Northeast Arkansas
+        </motion.p>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 2.0, ease: "easeOut" }}
+          style={{ opacity: 1 }} // Fallback to ensure visibility
+          className="flex gap-4 flex-wrap justify-center"
+        >
+          <motion.a 
+            href="#services" 
+            className="btn btn-primary"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.2, duration: 1.5, ease: "easeOut" }}
+            style={{ opacity: 1, transform: "scale(1)" }} // Fallback values
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Our Services
+          </motion.a>
+          
+          <motion.a 
+            href="/estimator" 
+            className="btn btn-outline"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.5, duration: 1.5, ease: "easeOut" }}
+            style={{ opacity: 1, transform: "scale(1)" }} // Fallback values
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            AI Estimator
+          </motion.a>
+        </motion.div>
+      </div>
+      
+      {/* Fallback content that's always visible (hidden by default but shows if motion fails) */}
+      <noscript>
+        <div className="relative z-10 flex flex-col items-center justify-center text-center">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-hackerBlue drop-shadow-glow mb-4">
+            Another Level Cleaning Services
+          </h1>
+          <p className="text-lg md:text-xl text-hackerGreen mb-8">
+            Jonesboro, Arkansas • Serving all of Northeast Arkansas
+          </p>
+          <div className="flex gap-4 flex-wrap justify-center">
+            <a href="#services" className="btn btn-primary">Our Services</a>
+            <a href="/estimator" className="btn btn-outline">AI Estimator</a>
+          </div>
+        </div>
+      </noscript>
     </section>
   );
 }

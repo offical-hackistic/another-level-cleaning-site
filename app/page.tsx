@@ -1,6 +1,8 @@
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import TransparentPricing from "@/components/TransparentPricing";
 import Testimonials from "@/components/Testimonials";
+import ServiceArea from "@/components/ServiceArea";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -8,6 +10,9 @@ export default function Home() {
     <main>
       <Hero />
       <Services />
+      <TransparentPricing />
+      
+      {/* Clean you can feel section */}
       <section id="about" className="section">
         <div className="container grid md:grid-cols-2 gap-8 items-center">
           <div className="card">
@@ -29,7 +34,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
       <Testimonials />
+      <ServiceArea />
       <Footer />
     </main>
   );

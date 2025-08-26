@@ -10,7 +10,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative h-[90vh] w-full flex flex-col justify-center items-center overflow-hidden">
+    <section id="home" className="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden">
       <Particles
         id="droplets"
         init={particlesInit}

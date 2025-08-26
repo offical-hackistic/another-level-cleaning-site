@@ -47,7 +47,7 @@ Keep JSON short. Do not include anything else.`;
       { role: "system", content: systemPrompt },
       { role: "user", content: [
         { type: "text", text: userPrompt },
-        *dataUrls.map((u)=>({ type: "input_image", image_url: u }))
+        ...dataUrls.map((u)=>({ type: "input_image", image_url: u }))
       ] }
     ];
 

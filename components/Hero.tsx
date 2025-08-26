@@ -38,7 +38,7 @@ export default function Hero() {
         }}
         className="absolute inset-0 z-0"
       />
-      
+
       {/* Content with higher z-index to ensure visibility */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-4xl mx-auto px-4">
         <motion.h1
@@ -50,7 +50,7 @@ export default function Hero() {
         >
           Another Level Cleaning Services
         </motion.h1>
-        
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -60,16 +60,16 @@ export default function Hero() {
         >
           Professional Exterior Cleaning Services in Northeast Arkansas. Get instant AI-powered estimates by uploading photos of your property.
         </motion.p>
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 2.0, ease: "easeOut" }}
           style={{ opacity: 1 }}
           className="flex gap-4 flex-wrap justify-center"
         >
-          <motion.a 
-            href="#services" 
+          <motion.a
+            href="#services"
             className="btn btn-primary"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -80,9 +80,9 @@ export default function Hero() {
           >
             Our Services
           </motion.a>
-          
-          <motion.a 
-            href="/estimator" 
+
+          <motion.a
+            href="/estimator"
             className="btn btn-outline"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}

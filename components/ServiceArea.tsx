@@ -12,7 +12,7 @@ export default function ServiceArea() {
     <section className="section">
       <div className="container">
         <div className="max-w-3xl mx-auto">
-          <div className="card text-center">
+          <div className="card text-center flex flex-col justify-start items-center">
             <h2 className="text-5xl md:text-6xl font-extrabold text-hackerBlue drop-shadow-glow mb-8 tracking-tight">Service Area</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {cities.map((city, i) => (

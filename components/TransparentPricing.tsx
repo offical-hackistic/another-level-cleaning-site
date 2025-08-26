@@ -8,7 +8,7 @@ export default function TransparentPricing() {
           <p className="text-xl md:text-2xl text-hackerGreen mb-6 leading-relaxed">
             No hidden fees. No surprises. Just honest pricing for quality service.
           </p>
-          <p className="text-lg md:text-xl opacity-90 leading-relaxed">
+          <p className="opacity-90 text-hackerGreen border border-solid text-[27px] leading-[31px] font-medium" style={{ fontFamily: 'Outfit, sans-serif' }}>
             Get a free instant estimate simply Tap on the GET AI ESTIMATE button, Upload a few photos of the property and your done. Its that easy!
           </p>
         </div>

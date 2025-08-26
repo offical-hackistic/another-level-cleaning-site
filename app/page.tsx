@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <Services />
       <TransparentPricing />
-      
+
       {/* Clean you can feel section */}
       <section id="about" className="section">
         <div className="container grid md:grid-cols-2 gap-8 items-center">
@@ -35,7 +35,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       <FAQ />
       <Testimonials />
       <ServiceArea />

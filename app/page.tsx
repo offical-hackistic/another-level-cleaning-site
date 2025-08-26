@@ -10,9 +10,17 @@ export default function Home() {
   return (
     <main>
       <Hero />
+
+      {/* Test section */}
+      <section className="py-20 bg-red-500">
+        <div className="container">
+          <h2 className="text-4xl text-white text-center">TEST SECTION - CAN YOU SEE THIS?</h2>
+        </div>
+      </section>
+
       <Services />
       <TransparentPricing />
-      
+
       {/* Clean you can feel section */}
       <section id="about" className="section">
         <div className="container grid md:grid-cols-2 gap-8 items-center">
@@ -35,7 +43,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       <FAQ />
       <Testimonials />
       <ServiceArea />

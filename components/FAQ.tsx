@@ -33,10 +33,16 @@ export default function FAQ() {
 
   return (
     <section className="section">
-      <div className="container">
-        <h2 className="text-5xl md:text-6xl font-extrabold text-hackerBlue drop-shadow-glow mb-12 text-center tracking-tight">
-          Frequently Asked Questions
-        </h2>
+      <div className="container flex flex-col">
+        <div className="flex flex-col relative leading-8 h-auto text-center" style={{
+          color: 'rgba(0, 245, 255, 1)',
+          fontSize: '59px',
+          fontWeight: '700',
+          letterSpacing: '-0.75px',
+          margin: '25px auto 53px'
+        }}>
+          <p>FQA</p>
+        </div>
         
         <div className="max-w-4xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
@@ -71,7 +77,7 @@ export default function FAQ() {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-lg opacity-80 mb-6">
+          <p className="text-2xl font-semibold leading-7 opacity-80 mb-6">
             Still have questions? We're here to help!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -19,10 +19,16 @@ export default function Testimonials() {
 
   return (
     <section className="section">
-      <div className="container">
-        <h2 className="text-5xl md:text-6xl font-extrabold text-hackerBlue drop-shadow-glow mb-12 text-center tracking-tight">
-          Don't take our word for it here what our customers have to say
-        </h2>
+      <div className="container flex flex-col">
+        <div className="flex flex-col relative h-auto" style={{
+          color: 'rgba(2, 245, 255, 1)',
+          fontSize: '37px',
+          letterSpacing: '-0.75px',
+          fontWeight: '700',
+          margin: '20px auto 34px'
+        }}>
+          <p>Testimonials</p>
+        </div>
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, i) => (
             <div key={i} className="card">

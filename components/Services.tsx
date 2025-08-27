@@ -8,8 +8,16 @@ export default function Services() {
   ];
   return (
     <section id="services" className="section">
-      <div className="container">
-        <h2 className="text-5xl md:text-6xl font-extrabold text-hackerBlue drop-shadow-glow mb-12 text-center tracking-tight">Our Services</h2>
+      <div className="container flex flex-col">
+        <div className="flex flex-col relative h-auto text-center" style={{
+          textShadow: '1px 2px 7px #02e688',
+          margin: '20px auto',
+          font: '300 73px Amaranth, sans-serif'
+        }}>
+          <h2>
+            <strong style={{color: 'rgb(80, 227, 194)'}}>Our Services </strong>
+          </h2>
+        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s,i)=> (
             <div key={i} className="card">
